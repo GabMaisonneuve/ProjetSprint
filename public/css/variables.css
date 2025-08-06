@@ -1,0 +1,64 @@
+:root {
+  /* Couleurs */
+  --couleur-principale: #233580;
+  --couleur-cliquable: #a52a2a;
+  --couleur-cliquable-secondaire: #2e5899;
+  --couleur-separateur: #d4af37;
+  --couleur-hover-rouge: #e8c5c5;
+  --couleur-hover-bleu: #a8c0e5;
+  --couleur-fond: #ffffff;
+  --couleur-fond-secondaire: #f7f7f7;
+  --couleur-texte: #384054;
+
+  /* Police */
+  --police-decorative: "garamond", sans-serif;
+  --police-texte: "raleway", sans-serif;
+
+  /* Taille texte */
+  --h1: 2.986rem;
+  --h2: 2.488rem;
+  --h3: 2.074rem;
+  --h4: 1.728rem;
+  --h5: 1.44rem;
+  --h6: 1.2rem;
+  --p: 1rem;
+  --small: 0.833rem;
+  --tiny: 0.694rem;
+
+  /* Margin */
+  --margin-xxl: 3rem;
+  --margin-xl: 2.5rem;
+  --margin-lg: 2rem;
+  --margin-md: 1.5rem;
+  --margin-sm: 1rem;
+  --margin-xs: 0.5rem;
+
+  /* Padding */
+  --padding-xxl: 3rem;
+  --padding-xl: 2.5rem;
+  --padding-lg: 2rem;
+  --padding-md: 1.5rem;
+  --padding-sm: 1rem;
+  --padding-xs: 0.5rem;
+
+  /* Ombre */
+  --ombre-xxl: 0 0 20px rgba(0, 0, 0, 0.2);
+  --ombre-xl: 0 0 15px rgba(0, 0, 0, 0.15);
+  --ombre-lg: 0 0 10px rgba(0, 0, 0, 0.1);
+  --ombre-md: 0 0 5px rgba(0, 0, 0, 0.05);
+  --ombre-sm: 0 0 2px rgba(0, 0, 0, 0.02);
+  --ombre-xs: 0 0 1px rgba(0, 0, 0, 0.01);
+  /* Opacité */
+  --opacite-xxl: 0.9;
+  --opacite-xl: 0.8;
+  --opacite-lg: 0.7;
+  --opacite-md: 0.6;
+  --opacite-sm: 0.5;
+  --opacite-xs: 0.4;
+  /* Animation */
+  --animation-xxl: 0.5s ease-in-out;
+  --animation-xl: 0.4s ease-in-out;
+  --animation-lg: 0.3s ease-in-out;
+  --animation-md: 0.2s ease-in-out;
+  --animation-sm: 0.1s ease-in-out;
+}

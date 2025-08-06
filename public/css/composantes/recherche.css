@@ -1,0 +1,27 @@
+.recherche__formulaire {
+  display: flex;
+  border: 2px solid var(--couleur-principale);
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--couleur-fond);
+}
+
+.recherche__champ {
+  padding: var(--padding-xs);
+  border: none;
+  outline: none;
+  font-size: var(--p);
+  color: var(--couleur-texte);
+  min-width: 700px;
+}
+
+.recherche__bouton {
+  background-color: var(--couleur-principale);
+  border: none;
+  padding: var(--padding-xs);
+  cursor: pointer;
+}
+
+.recherche__bouton img {
+  height: 28px;
+}

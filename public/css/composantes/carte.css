@@ -1,0 +1,51 @@
+.carte {
+  background-color: var(--couleur-fond-secondaire);
+  border: var(--couleur-separateur) 2px solid;
+  overflow: hidden;
+}
+
+.carte__image {
+  width: 100%;
+  display: block;
+}
+
+.carte__contenu {
+  padding: 10px;
+  text-align: left;
+}
+
+.carte__infos {
+  list-style: none;
+}
+
+.carte__infos-titre {
+  font-weight: bold;
+  display: inline-block;
+  min-width: 40%;
+  padding: 5px;
+}
+
+.carte__footer {
+  display: flex;
+  padding: 5px;
+}
+
+.card__timer {
+  font-size: 13px;
+  color: #555;
+}
+
+.card__btn {
+  background-color: #b41d1d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card__btn:hover {
+  background-color: var(--couleur-hover-rouge);
+  transition: background-color var(--animation-lg);
+}
