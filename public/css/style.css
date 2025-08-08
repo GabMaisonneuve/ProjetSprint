@@ -7,3 +7,7 @@
 @import url("composantes/header.css");
 @import url("composantes/footer.css");
 @import url("composantes/recherche.css");
+
+/* Pages */
+@import url("./pages/connexion.css");
+@import url("./pages/inscription.css");

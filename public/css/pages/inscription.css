@@ -1,0 +1,82 @@
+.h1-inscription {
+  font-size: 3rem;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content form {
+  background-color: var(--couleur-fond-secondaire);
+  max-width: 1200px;
+  min-width: 600px;
+  padding: 4rem;
+  box-shadow: var(--ombre-md);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content form .form-group {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.content form .form-group label {
+  font-size: var(--p);
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.content form .form-group input,
+.content form .form-group textarea {
+  border: 1px solid var(--couleur-principale);
+  padding: var(--padding-xs);
+  outline: 0;
+  border-radius: 3px;
+}
+
+.content form .form-group input:hover,
+.content form .form-group textarea:hover {
+  border-color: var(--couleur-cliquable);
+  transition: all 0.3s;
+}
+
+.content form .form-group input:focus,
+.content form .form-group textarea:focus {
+  border-color: var(--couleur-separateur);
+}
+
+.content form .form-group textarea {
+  min-height: 20rem;
+}
+
+.content form .form-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.content form .form-btn-container .btn {
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  font: inherit;
+  cursor: pointer;
+  border-radius: 15px;
+  color: var(--couleur-fond);
+  background-color: var(--couleur-cliquable-secondaire);
+}
+
+.content form .form-btn-container .btn:hover {
+  background-color: var(--couleur-cliquable);
+  transition: all 0.5s;
+}

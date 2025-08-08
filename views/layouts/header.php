@@ -51,7 +51,7 @@
       </nav>
       <nav class="header__nav-principale">
         <picture class="header__logo-container">
-          <a href="./index.html">
+          <a href="{{ base }}/">
             <img
               src="../public/images/logo-stampee.webp"
               alt="logo-stampee"
@@ -83,13 +83,20 @@
             </button>
           </form>
         </div>
-        <a href="" class="header__connexion">Se connecter</a>
+        {% if session.id_role != null %}
+        <a href="{{ base }}/deconnexion" class="header__connexion">Déconnecté</a>
+        {% else %}
+        <a href="{{ base }}/connexion" class="header__connexion">Connecter</a>
+        {% endif %}
+        <a href="{{ base }}/inscription" class="header__connexion">S'inscrire</a>
         <picture class="header__alarme-container">
+            <a href="{{ base }}/profil">
           <img
-            src="../public/images/alarme.webp"
-            alt="Alarme"
+            src="../public/images/profilIcone.png"
+            alt="Profil"
             class="header__alarme"
           />
+          </a>
         </picture>
       </nav>
     </header>
