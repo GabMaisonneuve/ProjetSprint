@@ -50,7 +50,8 @@ class Route {
             }
         }
         http_response_code(404);
-        echo "404 page not found";
+        $controller = new \App\Controllers\AccueilController();
+        $controller->error404();
     }
 }
 ?>

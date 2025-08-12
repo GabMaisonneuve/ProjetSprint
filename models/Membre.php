@@ -8,6 +8,8 @@ class Membre extends CRUD {
 
     protected $primaryKey = 'id_membre';
 
+    protected $fillable = ['nom', 'prenom', 'courriel', 'mot_de_passe', 'nom_utilisateur'];
+
 public function inscriptionUtilisateur($data) {
     $stmt = $this->prepare("INSERT INTO {$this->table} (nom, prenom, courriel, mot_de_passe, nom_utilisateur)
                             VALUES (:nom, :prenom, :courriel, :mot_de_passe, :nom_utilisateur)");
@@ -34,12 +36,16 @@ public function inscriptionUtilisateur($data) {
         session_start();
     }
 
-    $_SESSION['utilisateur'] = [
-        'id_membre'       => $utilisateur['id_membre'],
-        'nom_utilisateur' => $utilisateur['nom_utilisateur'],
-        'courriel'        => $utilisateur['courriel'] ?? null,
-        'id_role'         => $utilisateur['id_role'] ?? 1
-    ];
+    
+        $_SESSION['id_membre'] = $utilisateur['id_membre'];
+        $_SESSION['nom_utilisateur'] = $utilisateur['nom_utilisateur'];
+        $_SESSION['nom'] = $utilisateur['nom'] ?? null;
+        $_SESSION['prenom'] = $utilisateur['prenom'] ?? null;
+        $_SESSION['mot_de_passe'] = $utilisateur['mot_de_passe'] ?? null;
+        $_SESSION['courriel'] = $utilisateur['courriel'] ?? null;
+        $_SESSION['id_role'] = $utilisateur['id_role'] ?? 1;
+
+        
 }
 }
 

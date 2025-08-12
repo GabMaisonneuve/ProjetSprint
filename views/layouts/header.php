@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../public/css/style.css" />
+    <link rel="stylesheet" href="{{ asset }}/css/style.css" />
   </head>
   <body>
     <header class="header__container">
@@ -53,7 +53,7 @@
         <picture class="header__logo-container">
           <a href="{{ base }}/">
             <img
-              src="../public/images/logo-stampee.webp"
+              src="{{ asset }}/images/logo-stampee.webp"
               alt="logo-stampee"
               class="header__logo"
             />
@@ -61,7 +61,7 @@
         </picture>
         <picture class="header__menuHamburger-container">
           <img
-            src="../public/images/menu-hamburger.webp"
+            src="{{ asset }}/images/menu-hamburger.webp"
             alt="menu-hamburger-icone"
           />
         </picture>
@@ -77,22 +77,23 @@
             />
             <button type="submit" class="recherche__bouton">
               <img
-                src="../public/images/loupe.webp"
+                src="{{ asset }}/images/loupe.webp"
                 alt="icone-loupe-recherche"
               />
             </button>
           </form>
         </div>
-        {% if session.id_role != null %}
+        {% if session or utilisateur is defined %}
         <a href="{{ base }}/deconnexion" class="header__connexion">Déconnecté</a>
         {% else %}
         <a href="{{ base }}/connexion" class="header__connexion">Connecter</a>
-        {% endif %}
         <a href="{{ base }}/inscription" class="header__connexion">S'inscrire</a>
+        {% endif %}
+        
         <picture class="header__alarme-container">
             <a href="{{ base }}/profil">
           <img
-            src="../public/images/profilIcone.png"
+            src="{{ asset }}/images/profilIcone.png"
             alt="Profil"
             class="header__alarme"
           />

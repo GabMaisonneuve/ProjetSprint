@@ -1,0 +1,69 @@
+.infos-profil {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  background-color: var(--couleur-fond-secondaire);
+  padding: 4rem;
+  border-radius: 10px;
+  box-shadow: var(--ombre-md);
+}
+
+.info-profil {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--couleur-separateur);
+  padding-bottom: var(--padding-xs);
+  margin-bottom: var(--margin-xs);
+  color: var(--couleur-texte);
+}
+
+.label {
+  font-weight: bold;
+}
+
+.profil-h1 {
+  text-align: center;
+}
+
+.profil-h2 {
+  text-align: center;
+  margin-bottom: var(--margin-md);
+}
+
+.boutons {
+  display: flex;
+}
+
+.btn {
+  display: inline-block;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 8px;
+  min-width: 50%;
+  text-align: center;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.btn__modifier {
+  background-color: var(--couleur-cliquable-secondaire);
+  margin-right: 3px;
+}
+
+.btn__supprimer {
+  background-color: var(--couleur-cliquable);
+}
+
+.btn__modifier:hover {
+  background-color: var(--couleur-hover-bleu);
+  color: var(--couleur-cliquable-secondaire);
+}
+
+.btn__supprimer:hover {
+  background-color: var(--couleur-hover-rouge);
+  color: var(--couleur-cliquable);
+}

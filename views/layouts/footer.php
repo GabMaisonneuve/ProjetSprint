@@ -1,7 +1,7 @@
 <footer class="footer__container">
       <picture class="footer__logo-container">
         <img
-          src="../public/images/logo-stampee.webp"
+          src="{{ asset }}/images/logo-stampee.webp"
           alt="logo-stampee"
           class="footer__logo"
         />

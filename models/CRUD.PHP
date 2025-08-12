@@ -35,7 +35,7 @@ abstract class CRUD extends \PDO{
     $data = array_intersect_key($data, $data_keys);
 
     if (empty($data)) {
-        throw new Exception("No valid data provided for update.");
+        throw new Exception("Aucune entrées valides fournies pour la mise à jour.");
     }
 
     $fieldName = '';

@@ -16,7 +16,7 @@ class ConnexionController{
     public function deconnexion(){
         unset($_SESSION['utilisateur']);
         session_destroy();
-        return View::render('Accueil',[
+        return View::render('accueil',[
             'title' => 'Accueil',
             'message' => 'Vous avez été déconnecté avec succès.'
         ]);
@@ -24,7 +24,6 @@ class ConnexionController{
 
     public function connexion(){
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-         $nom_utilisateur = htmlspecialchars($_POST['nom_utilisateur']) ?? '';
          $mot_de_passe = htmlspecialchars($_POST['mot_de_passe']) ?? '';
 
          $membreModel = new Membre();
@@ -32,11 +31,10 @@ class ConnexionController{
 
          if ($utilisateur && password_verify($mot_de_passe, $utilisateur['mot_de_passe'])) {
           $membreModel->creerSessionUtilisateur($utilisateur);
-
-            return View::render('Accueil', [
+            $session = $_SESSION ?? null;
+            return View::render('accueil', [
+                'session' => $session,
                 'title' => 'Accueil',
-                'message' => 'Bienvenue, ' . $utilisateur['nom_utilisateur'] . '!@#$@#$',
-                'session' => $_SESSION['utilisateur']
             ]);
          }
 

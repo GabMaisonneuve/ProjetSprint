@@ -1,6 +1,7 @@
 {{ include('layouts/header.php', { title: 'Create Post' }) }}
 
-{% if session %}
+
+{% if session is defined %}
     <p>Bienvenue {{ session.nom_utilisateur }} !</p>
 {% else %}
     <p>Bienvenue invité !</p>

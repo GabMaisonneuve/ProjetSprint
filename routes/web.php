@@ -24,10 +24,12 @@ Route::post('/connexion', 'ConnexionController@connexion');
 Route::get('/deconnexion', 'ConnexionController@deconnexion');
 
 
-// Route pour le profil
+// Routes pour le profil
 Route::get('/profil', 'ProfilController@index');
-Route::get('/profil/edit', 'ProfilController@editProfil');
-Route::post('/profil/edit', 'ProfilController@updateProfil');
+// Pour le formulaire de modification de profil
+Route::get('/profil_edit', 'ProfilController@modifierProfil');
+// Met a jour le profil
+Route::post('/profil', 'ProfilController@updateProfil');
 
 
 
