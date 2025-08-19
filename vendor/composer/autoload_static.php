@@ -26,6 +26,11 @@ class ComposerStaticInitffedbe8363d2bef8cdb72fafeae48762
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
+        'I' => 
+        array (
+            'Intervention\\Image\\' => 19,
+            'Intervention\\Gif\\' => 17,
+        ),
         'A' => 
         array (
             'App\\Routes\\' => 11,
@@ -47,6 +52,14 @@ class ComposerStaticInitffedbe8363d2bef8cdb72fafeae48762
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Intervention\\Image\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/intervention/image/src',
+        ),
+        'Intervention\\Gif\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/intervention/gif/src',
         ),
         'App\\Routes\\' => 
         array (

@@ -1,4 +1,4 @@
-{{ include('layouts/header.php', { title: 'Create Post' }) }}
+{{ include('layouts/header.php', { title: 'Accueil' }) }}
 
 
 {% if session is defined %}
@@ -11,4 +11,7 @@
     <div class="message">{{ message }}</div>
 {% endif %}
 
-{{ include('layouts/footer.php', { title: 'Create Post' }) }}
+
+<a href="{{ base }}/detail?id=11">Voir timbre #1</a>
+
+{{ include('layouts/footer.php', { title: 'Accueil' }) }}

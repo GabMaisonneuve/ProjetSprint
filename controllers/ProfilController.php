@@ -14,6 +14,7 @@ class ProfilController {
         }
         $membre = new Membre();
         $utilisateur = $membre->getUtilisateurParUtilisateur($_SESSION['nom_utilisateur']);
+        $session = $_SESSION ?? null;
 
         if (!$utilisateur) {
             return View::render('connexion', [
@@ -25,12 +26,14 @@ class ProfilController {
         unset($utilisateur['mot_de_passe']);
         return View::render('profil', [
             'title' => 'Profil',
-            'session' => $utilisateur,
+            'utilisateur' => $utilisateur,
+            'session' => $session
         ]);
     }
 
     // Montre le formulaire de modification du profil
     public function modifierProfil() {
+        $session = $_SESSION ?? null;
        if (!isset($_SESSION['id_membre'])) {
         return View::redirect('connexion');
 }
@@ -42,7 +45,8 @@ class ProfilController {
         unset($utilisateur['mot_de_passe']);
         return View::render('profil_edit', [
             'title' => 'Modifier le profil',
-            'utilisateur' => $utilisateur
+            'utilisateur' => $utilisateur,
+            'session' => $session
         ]);
     }
 

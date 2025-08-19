@@ -65,6 +65,9 @@
             alt="menu-hamburger-icone"
           />
         </picture>
+
+        <a href="{{ base }}/catalogue" class="header__connexion">Catalogue d'enchères</a>
+
         <div class="header__recherche">
           <form class="recherche__formulaire">
             <label for="recherche" class="masquer">Recherche</label>
@@ -83,8 +86,9 @@
             </button>
           </form>
         </div>
-        {% if session or utilisateur is defined %}
+        {% if session.nom_utilisateur is defined %}
         <a href="{{ base }}/deconnexion" class="header__connexion">Déconnecté</a>
+        <a href="{{ base }}/ajouter" class="header__connexion">Ajouter un timbre</a>
         {% else %}
         <a href="{{ base }}/connexion" class="header__connexion">Connecter</a>
         <a href="{{ base }}/inscription" class="header__connexion">S'inscrire</a>

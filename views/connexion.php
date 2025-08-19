@@ -30,4 +30,4 @@
     </div>
 </div>
 
-{{ include('layouts/footer.php', { title: 'connexion' }) }}
+{{ include('layouts/footer.php', { title: 'Connexion' }) }}

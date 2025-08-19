@@ -1,4 +1,4 @@
-{{ include('layouts/header.php', { title: 'Connexion' }) }}
+{{ include('layouts/header.php', { title: 'Error' }) }}
 
 {% block content %}
 <div class="infos-profil">
@@ -9,4 +9,4 @@
 </div>
 {% endblock %}
 
-{{ include('layouts/footer.php', { title: 'connexion' }) }}
+{{ include('layouts/footer.php', { title: 'Error' }) }}

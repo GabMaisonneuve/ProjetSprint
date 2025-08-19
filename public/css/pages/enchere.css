@@ -1,0 +1,169 @@
+@import url("../assets/css/style.css");
+
+.enchere {
+  margin: 2rem auto;
+  padding: 1rem;
+  flex-direction: column;
+  border: 1px solid var(--couleur-separateur);
+}
+
+.enchere__conteneur {
+  max-width: 1800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 5rem;
+}
+
+/* Côté gauche, informations avec image */
+.enchere__gauche {
+  flex-basis: 700px;
+  width: 100%;
+}
+
+.enchere__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.enchere__thumbnails {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+
+  .enchere__thumbnail {
+    width: 20%;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .enchere__thumbnail:hover {
+    opacity: 0.6;
+    scale: 1.1;
+    transition: all 0.4s;
+  }
+}
+
+.enchere__resume {
+  margin-top: var(--margin-md);
+  line-height: 1.6;
+}
+
+.enchere__image-container {
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.enchere__zoom-buttons {
+  position: absolute;
+  top: 10px;
+  left: -50px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.enchere__zoom-buttons {
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.zoom-in,
+.zoom-out {
+  border-radius: 5px;
+}
+
+.zoom-in:hover,
+.zoom-out:hover {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background-color: var(--couleur-hover-rouge);
+  transition: all 0.2s;
+}
+
+/* Côté droit, informations sur timbres et prix*/
+.enchere__droit {
+  flex-basis: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.enchere__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.enchere__form input[type="number"] {
+  border-radius: 10px;
+}
+
+.enchere__information,
+.enchere__information--prix {
+  color: var(--couleur-texte);
+  display: flex;
+  justify-content: space-between;
+}
+
+.enchere__information--reponse {
+  color: var(--couleur-principale);
+  font-weight: bold;
+  font-size: var(--h6);
+}
+
+.enchere__information--prix {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.enchere__information__conteneur {
+  display: flex;
+  margin-top: 5rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.enchere__titre {
+  text-align: center;
+}
+
+.enchere__form {
+  display: flex;
+}
+
+.enchere__form .card__btn {
+  padding: 12px 3px;
+  width: 150px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .enchere__conteneur {
+    flex-direction: column;
+  }
+
+  .enchere__gauche {
+    max-width: 100%;
+  }
+
+  .enchere__detail,
+  .enchere__information__conteneur {
+    justify-content: center;
+    align-items: center;
+  }
+}

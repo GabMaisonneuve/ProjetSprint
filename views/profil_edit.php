@@ -1,4 +1,4 @@
-{{ include('layouts/header.php', { title: 'Create Post' }) }}
+{{ include('layouts/header.php', { title: 'modification_profil' }) }}
 
 <div class="container">
     <div class="content">
@@ -32,4 +32,4 @@
 </div>
 
 
-{{ include('layouts/footer.php', { title: 'Create Post' }) }}
+{{ include('layouts/footer.php', { title: 'Modification_profil' }) }}

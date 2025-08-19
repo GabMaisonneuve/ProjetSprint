@@ -52,4 +52,5 @@ abstract class CRUD extends \PDO{
     return $stmt->execute($data);
 }
 
+
 }

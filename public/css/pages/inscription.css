@@ -36,7 +36,8 @@
 }
 
 .content form .form-group input,
-.content form .form-group textarea {
+.content form .form-group textarea,
+.content form .form-group select {
   border: 1px solid var(--couleur-principale);
   padding: var(--padding-xs);
   outline: 0;
@@ -44,13 +45,15 @@
 }
 
 .content form .form-group input:hover,
-.content form .form-group textarea:hover {
+.content form .form-group textarea:hover,
+.content form .form-group select:hover {
   border-color: var(--couleur-cliquable);
   transition: all 0.3s;
 }
 
 .content form .form-group input:focus,
-.content form .form-group textarea:focus {
+.content form .form-group textarea:focus,
+.content form .form-group select:focus {
   border-color: var(--couleur-separateur);
 }
 
