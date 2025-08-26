@@ -59,12 +59,6 @@
             />
           </a>
         </picture>
-        <picture class="header__menuHamburger-container">
-          <img
-            src="{{ asset }}/images/menu-hamburger.webp"
-            alt="menu-hamburger-icone"
-          />
-        </picture>
 
         <a href="{{ base }}/catalogue" class="header__connexion">Catalogue d'enchères</a>
 
