@@ -20,4 +20,14 @@ class Image extends CRUD
             ':principale' => $principale ? 1 : 0,
         ]);
     }
+
+    public function findSecondaryByTimbre($idTimbre): array
+{
+    $sql = "SELECT url_image 
+            FROM images 
+            WHERE id_timbre = :id AND principale = 0";
+    $stmt = $this->prepare($sql);
+    $stmt->execute([':id' => $idTimbre]);
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+}
 }

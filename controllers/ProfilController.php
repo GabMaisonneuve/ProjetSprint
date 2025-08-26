@@ -5,6 +5,8 @@ use App\Models\Membre;
 use App\Providers\View;
 use App\Models\CRUD;
 use App\Providers\Validator;
+use App\Models\Favoris;
+use App\Models\Encheres;
 
 class ProfilController {
 
@@ -23,11 +25,28 @@ class ProfilController {
             ]);
         }
 
+        $favorisModel = new Favoris();
+        $favorisRows = $favorisModel->obtenirFavoris($utilisateur['id_membre'] ?? null);
+
+        $enchereModel = new Encheres;
+        $favoris = [];
+
+        foreach ($favorisRows as $fav) {
+            $enchere = $enchereModel->selectEnchere($fav['id_enchere']);
+            if ($enchere) {
+                // Optionally, get current bid
+                $derniereMise = (new \App\Models\Mise())->obtenirDerniereMise($enchere['id_enchere']);
+                $enchere['currentBid'] = $derniereMise['montant'] ?? $enchere['prix_plancher'];
+                $favoris[] = $enchere;
+            }
+        }
+
         unset($utilisateur['mot_de_passe']);
         return View::render('profil', [
             'title' => 'Profil',
             'utilisateur' => $utilisateur,
-            'session' => $session
+            'session' => $session,
+            'favoris' => $favoris
         ]);
     }
 

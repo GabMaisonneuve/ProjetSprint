@@ -18,12 +18,12 @@
                 <img src="public/{{ timbre.image_principale }}" 
                     alt="Vue principale" 
                     class="thumbnail active" 
-                    data-full="{{ base }}{{ timbre.image_principale }}">
+                    data-full="public/{{ timbre.image_principale }}">
                 {% for image in timbre.images_secondaires %}
-                    <img src="public/{{ image.url }}" 
+                    <img src="public/{{ image.url_image }}" 
                         alt="Vue {{ loop.index }}" 
                         class="thumbnail" 
-                        data-full="public/{{ image.url }}">
+                        data-full="public/{{ image.url_image }}">
                 {% endfor %}
             </div>
             {% endif %}
@@ -79,6 +79,11 @@
                     <a href="{{ base }}/timbre/{{ timbre.id_timbre }}/modifier" class="btn btn-primary">
                         Modifier
                     </a>
+                    {% if id_enchere %}
+                    <a class="btn btn-primary" href="{{ base }}/enchere?id={{ id_enchere }}">
+                        Retourner à l'enchère
+                    </a>
+                    {% endif %}
                     <button class="btn btn-secondary" onclick="deleteTimbre('{{ timbre.id_timbre }}')">
                         Supprimer
                     </button>

@@ -2,20 +2,30 @@
   background-color: var(--couleur-fond-secondaire);
   border: var(--couleur-separateur) 2px solid;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .carte__image {
   width: 100%;
+  height: 200px;
+  object-fit: contain;
+  object-position: center;
   display: block;
 }
 
 .carte__contenu {
   padding: 10px;
   text-align: left;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .carte__infos {
   list-style: none;
+  flex-grow: 1;
 }
 
 .carte__infos-titre {
@@ -28,6 +38,7 @@
 .carte__footer {
   display: flex;
   padding: 5px;
+  margin-top: auto;
 }
 
 .card__timer {
@@ -43,6 +54,7 @@
   font-size: 14px;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
 }
 
 .card__btn:hover {

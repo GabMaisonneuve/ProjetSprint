@@ -4,6 +4,7 @@ use App\Controllers\AccueilController;
 use App\Controllers\InscriptionController;
 use App\Controllers\ConnexionController;
 use App\Controllers\TimbreController;
+use App\Controller\MiseController;
 
 
 // Route pour la page d'accueil
@@ -47,7 +48,12 @@ Route::get('/catalogue', 'CatalogueController@index');
 //Route pour le detail d'une enchère
 Route::get('/enchere', 'CatalogueController@show');
 
+//Route pour une mise
+Route::post('/enchere', 'MiseController@ajouter');
 
+//Routes pour les favoris
+Route::get('/favoris/liste', 'FavorisController@liste');
+Route::post('/favoris/toggle', 'FavorisController@toggle');
 
 
 

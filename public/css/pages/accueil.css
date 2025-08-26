@@ -1,0 +1,15 @@
+.coups-coeur__contenu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.coups-coeur__texte {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.h1-accueil {
+  text-align: center;
+}

@@ -9,6 +9,10 @@
 @import url("composantes/recherche.css");
 @import url("composantes/carte.css");
 @import url("composantes/grille.css");
+@import url("composantes/carrousel.css");
+@import url("composantes/section.css");
+@import url("composantes/hero.css");
+@import url("composantes/filtres.css");
 
 /* Pages */
 @import url("./pages/connexion.css");
@@ -16,3 +20,4 @@
 @import url("./pages/profil.css");
 @import url("./pages/detail.css");
 @import url("./pages/enchere.css");
+@import url("./pages/accueil.css");

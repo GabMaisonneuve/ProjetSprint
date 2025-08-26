@@ -151,29 +151,35 @@ class TimbreController
         }
 
         if (!empty($_FILES['images']['name'][0])) {
-        $count = count($_FILES['images']['name']);
+        $uploadDir = __DIR__ . '/../public/uploads/timbres';
 
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        $count = count($_FILES['images']['name']);
         if ($count > 4) {
             $count = 4; // limiter à 4
         }
 
         for ($i = 0; $i < $count; $i++) {
             if ($_FILES['images']['error'][$i] === UPLOAD_ERR_OK) {
-                $tmpName = $_FILES['images']['tmp_name'][$i];
                 $ext = strtolower(pathinfo($_FILES['images']['name'][$i], PATHINFO_EXTENSION) ?: 'jpg');
                 $fileName = $idTimbre . '_sec_' . uniqid('', true) . '.' . $ext;
                 $destPath = $uploadDir . '/' . $fileName;
 
-                $manager->read($tmpName)
-                    ->scaleDown(400, 400) // un peu plus petit
+                $manager = new ImageManager(new Driver());
+                $manager->read($_FILES['images']['tmp_name'][$i])
+                    ->scaleDown(400, 400) // Plus petit pour miniatures
                     ->save($destPath, 85);
 
                 $publicUrl = '/uploads/timbres/' . $fileName;
 
-                $imageModel->addForTimbre($idTimbre, $publicUrl, false); // false = pas principale
+                $imageModel = new Image();
+                $imageModel->addForTimbre($idTimbre, $publicUrl, false);
             }
         }
-        }
+    }
         
         // Redirection
        return View::redirect('ajouter?succes=1');
@@ -186,6 +192,7 @@ class TimbreController
     
     // On prends le ID du timbre depuis l'URL
     $id = $_GET['id'];
+    $id_enchere = $_GET['id_enchere'] ?? null;
     
     // Création d'un instance de Timbre
     $timbreModel = new Timbre();
@@ -197,9 +204,16 @@ class TimbreController
         return;
     }
 
+     // Charger les images secondaires
+    $imageModel = new Image();
+    $secondaires = $imageModel->findSecondaryByTimbre($id);
+
+    $timbre['images_secondaires'] = $secondaires;
+
     return View::render('detail', [
         'title' => 'Test Détail',
         'timbre' => $timbre,
+        'id_enchere' => $id_enchere,
         'session' => $_SESSION ?? null
     ]);
 }
