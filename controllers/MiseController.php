@@ -12,6 +12,7 @@ public function ajouter() {
         $id_enchere = $_GET['id'] ?? null;
         $id_membre = $_SESSION["id_membre"] ?? null;
         $montant = $_POST["montant"];
+        $session = $_SESSION ?? null;
 
         $validator = new Validator();
         $validator->field("montant", $montant, "Montant")->required();
@@ -49,7 +50,8 @@ public function ajouter() {
         return View::render("enchere", [
             "success" => "Votre mise a été ajoutée avec succès!",
             "enchere" => $enchere,
-            "currentBid" => $currentBid
+            "currentBid" => $currentBid,
+            "session" => $session
         ]);
     }
 }
